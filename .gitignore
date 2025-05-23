@@ -1,3 +1,14 @@
+#Prevent committing sensitive information
 .env
 
+#Don't commit dependencies
 node_modules
+
+#Ignore log files
+*.log
+
+# macOS-specific system file, not needed in the repo
+.DS_Store
+
+#Ignore any temporary files inside your public folder
+/public/tmp/
