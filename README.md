@@ -29,7 +29,7 @@ The project follows a structured MVC pattern:
 1. Clone this repository
 
    ```
-   git clone https://github.com/YOUR_USERNAME/recipe-book-app.git
+   git clone https://github.com/Austidav59/staffworkschallenge.git
    ```
 
 2. Install dependencies

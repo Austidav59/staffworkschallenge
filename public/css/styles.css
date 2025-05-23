@@ -285,8 +285,11 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+/* Recipe Comments */
 .recipe-comments {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
 }
 
 .comments-list {
@@ -294,9 +297,10 @@ footer {
 }
 
 .comment {
-  border-bottom: 1px solid #eee;
-  padding: 0.8rem 0;
-  margin-bottom: 0.8rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
 .comment-header {
@@ -308,30 +312,30 @@ footer {
 
 .comment-author {
   font-weight: bold;
+  color: var(--primary-color);
 }
 
 .comment-date {
-  color: #999;
-  font-size: 0.8rem;
+  color: #777;
 }
 
-.comment-form {
-  background-color: #f8f8f8;
-  padding: 1rem;
+.comment-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .comment-form h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .form-group {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
@@ -340,8 +344,13 @@ footer {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ddd;
-  border-radius: 2px;
+  border-radius: 4px;
+  font-family: inherit;
   font-size: 0.9rem;
+}
+
+.form-group textarea {
+  resize: vertical;
 }
 
 /* About Page */

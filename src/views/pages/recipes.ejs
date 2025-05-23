@@ -5,13 +5,6 @@
         <h1>All Recipes</h1>
     </section>
 
-    <section class="search-section">
-        <form action="/recipes/search" method="POST" class="search-form">
-            <input type="text" name="query" placeholder="Search recipes..." required>
-            <button type="submit" class="btn">Search</button>
-        </form>
-    </section>
-
     <section class="recipes-container">
         <div class="recipe-grid">
             ${recipes.length === 0 ? 

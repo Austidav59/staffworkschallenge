@@ -1,11 +1,22 @@
+<!-- 
+  Recipe Detail Page:
+  - Implements the 'View' component of MVC architecture
+  - Extends the base layout template for consistent site structure
+  - Demonstrates server-side rendering capabilities of EJS
+-->
 <%- include('../partials/layout', { 
   title: recipe.title,
   content: `
     <section class="recipe-detail">
+        <!-- Header section with essential recipe information -->
         <div class="recipe-header">
             <h1>${recipe.title}</h1>
             <p class="recipe-description">${recipe.description}</p>
             
+            <!-- 
+              Metadata section displays key information at a glance
+              Helps users quickly assess recipe complexity and requirements
+            -->
             <div class="recipe-meta">
                 <span>Prep: ${recipe.prepTime}</span>
                 <span>Cook: ${recipe.cookTime}</span>
@@ -15,6 +26,11 @@
         </div>
         
         <div class="recipe-content">
+            <!-- 
+              Image selection logic mirrors the recipe-card partial 
+              Using template literals for conditional rendering
+              This approach ensures consistent image handling across the app
+            -->
             <div class="recipe-image">
                 ${
                   recipe.id === 1 ? '<img src="/public/images/spagettiImage.jpeg" alt="' + recipe.title + '">' :
@@ -26,6 +42,10 @@
             </div>
             
             <div class="recipe-details">
+                <!-- 
+                  Ingredients section uses unordered list for proper semantic HTML
+                  JavaScript map() used for dynamic list generation from model data
+                -->
                 <div class="recipe-ingredients">
                     <h2>Ingredients</h2>
                     <ul>
@@ -33,12 +53,53 @@
                     </ul>
                 </div>
                 
+                <!-- 
+                  Instructions section uses ordered list for step sequence
+                  Preserves the sequence of steps which is crucial for recipes
+                -->
                 <div class="recipe-instructions">
                     <h2>Instructions</h2>
                     <ol>
                         ${recipe.instructions.map(step => `<li>${step}</li>`).join('')}
                     </ol>
                 </div>
+            </div>
+        </div>
+        
+        <!-- 
+          Comments section allows users to interact with recipes
+          POST route demonstrates form handling and data persistence with mock data
+        -->
+        <div class="recipe-comments">
+            <h2>Comments</h2>
+            <div class="comments-list">
+                ${comments && comments.length > 0 ? 
+                  comments.map(comment => `
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">${comment.author}</span>
+                            <span class="comment-date">${new Date(comment.date).toLocaleDateString()}</span>
+                        </div>
+                        <p class="comment-text">${comment.text}</p>
+                    </div>
+                  `).join('') : 
+                  '<p>No comments yet. Be the first to comment!</p>'
+                }
+            </div>
+            
+            <div class="comment-form">
+                <h3>Add a Comment</h3>
+                <form action="/recipes/${recipe.id}/comments" method="POST">
+                    <div class="form-group">
+                        <label for="author">Your Name</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Comment</label>
+                        <textarea id="text" name="text" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
             </div>
         </div>
     </section>

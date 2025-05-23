@@ -1,0 +1,43 @@
+<!-- 
+  Recipe Card Partial:
+-->
+<div class="recipe-card">
+    <div class="recipe-image">
+        <% let imagePath = ""; 
+           // Dynamic image selection based on recipe ID
+           // This approach avoids hardcoding paths in the data model
+           // and centralizes image path logic in one place
+           switch(recipe.id) {
+             case 1:
+               imagePath = "/public/images/spagettiImage.jpeg";
+               break;
+             case 2:
+               imagePath = "/public/images/avacodoToast.jpeg";
+               break;
+             case 3:
+               imagePath = "/public/images/choclateChipCookies.jpeg";
+               break;
+             case 4:
+               imagePath = "/public/images/greekSalad.jpeg";
+               break;
+             default:
+               // Fallback image for new recipes or edge cases
+               // Ensures UI remains consistent even with missing images
+               imagePath = "/public/images/placeHolderFood.jpeg";
+           }
+        %>
+        <img src="<%= imagePath %>" alt="<%= recipe.title %>">
+    </div>
+    <div class="recipe-content">
+        <!-- Simple, clean card layout for optimal UX -->
+        <h3><%= recipe.title %></h3>
+        <p class="recipe-description"><%= recipe.description %></p>
+        <div class="recipe-meta">
+            <!-- Key recipe information shown at glance to help users scan -->
+            <span><%= recipe.difficulty %></span>
+            <span><%= recipe.prepTime %> prep</span>
+        </div>
+        <!-- Link to detail page implements the navigation flow -->
+        <a href="/recipes/<%= recipe.id %>" class="btn">View</a>
+    </div>
+</div> 
