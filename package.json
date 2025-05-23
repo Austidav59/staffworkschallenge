@@ -1,19 +1,21 @@
 {
   "name": "staffworkschallenge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Fastify + EJS application for StaffWorx",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fastify/static": "^8.2.0",
-    "@fastify/view": "^11.1.0",
-    "ejs": "^3.1.10",
-    "fastify": "^5.3.3",
-    "type": "module"
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/static": "^6.12.0",
+    "@fastify/view": "^8.2.0",
+    "ejs": "^3.1.9",
+    "fastify": "^4.25.1"
   }
 }
