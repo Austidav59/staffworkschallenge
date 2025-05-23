@@ -1,0 +1,30 @@
+<%- include('../partials/layout', { 
+  title: 'About Us',
+  content: `
+    <section class="page-header">
+        <h1>${message}</h1>
+    </section>
+
+    <section class="about-content">
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>Welcome to our Recipe Book! This collection of recipes has been curated to provide you with delicious meal ideas for any occasion.</p>
+            
+            <p>This application was built using:</p>
+            <ul>
+                <li>Fastify - A high-performance Node.js web framework</li>
+                <li>EJS - Embedded JavaScript templating</li>
+                <li>ES Modules - Modern JavaScript syntax</li>
+            </ul>
+            
+            <h2>Features</h2>
+            <ul>
+                <li>Browse our collection of recipes</li>
+                <li>View detailed cooking instructions</li>
+            </ul>
+            
+            <p>This application was created as part of a coding challenge to demonstrate server-rendered web applications using Fastify and EJS.</p>
+        </div>
+    </section>
+  `
+}) %> 

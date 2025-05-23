@@ -6,7 +6,6 @@ A server-rendered web application built with Fastify and EJS templating engine, 
 
 - Browse a collection of recipes
 - View detailed recipe information including ingredients and instructions
-- Search for recipes by keyword
 - Add comments to recipes
 - Server-side rendering with EJS templates
 - MVC architecture with routes (controllers), views, and models
@@ -67,5 +66,4 @@ The project follows a structured MVC pattern:
   - Basic authentication simulation
 
 - **POST Routes**:
-  - Search functionality (`/recipes/search`)
   - Comment submission (`/recipes/:id/comments`)
