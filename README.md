@@ -63,7 +63,3 @@ The project follows a structured MVC pattern:
 - **Middleware Usage**:
 
   - Request timing middleware to track request performance
-  - Basic authentication simulation
-
-- **POST Routes**:
-  - Comment submission (`/recipes/:id/comments`)
