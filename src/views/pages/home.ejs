@@ -1,0 +1,29 @@
+<%- include('../partials/layout', { 
+  title: 'Recipe Book',
+  content: `
+    <section class="hero">
+        <div class="hero-content">
+            <h1>${message}</h1>
+            <p>Discover delicious recipes for every occasion</p>
+            <a href="/recipes" class="btn btn-primary">Browse All Recipes</a>
+        </div>
+    </section>
+
+    <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-grid">
+            ${featuredRecipes.map(recipe => {
+              return include('../partials/recipe-card', { recipe });
+            }).join('')}
+        </div>
+    </section>
+
+    <section class="search-section">
+        <h2>Find a Recipe</h2>
+        <form action="/recipes/search" method="POST" class="search-form">
+            <input type="text" name="query" placeholder="Search recipes..." required>
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </section>
+  `
+}) %> 

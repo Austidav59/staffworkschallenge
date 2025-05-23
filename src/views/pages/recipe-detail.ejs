@@ -1,0 +1,46 @@
+<%- include('../partials/layout', { 
+  title: recipe.title,
+  content: `
+    <section class="recipe-detail">
+        <div class="recipe-header">
+            <h1>${recipe.title}</h1>
+            <p class="recipe-description">${recipe.description}</p>
+            
+            <div class="recipe-meta">
+                <span>Prep: ${recipe.prepTime}</span>
+                <span>Cook: ${recipe.cookTime}</span>
+                <span>Servings: ${recipe.servings}</span>
+                <span>Difficulty: ${recipe.difficulty}</span>
+            </div>
+        </div>
+        
+        <div class="recipe-content">
+            <div class="recipe-image">
+                ${
+                  recipe.id === 1 ? '<img src="/public/images/spagettiImage.jpeg" alt="' + recipe.title + '">' :
+                  recipe.id === 2 ? '<img src="/public/images/avacodoToast.jpeg" alt="' + recipe.title + '">' :
+                  recipe.id === 3 ? '<img src="/public/images/choclateChipCookies.jpeg" alt="' + recipe.title + '">' :
+                  recipe.id === 4 ? '<img src="/public/images/greekSalad.jpeg" alt="' + recipe.title + '">' :
+                  '<img src="/public/images/placeHolderFood.jpeg" alt="' + recipe.title + '">'
+                }
+            </div>
+            
+            <div class="recipe-details">
+                <div class="recipe-ingredients">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="recipe-instructions">
+                    <h2>Instructions</h2>
+                    <ol>
+                        ${recipe.instructions.map(step => `<li>${step}</li>`).join('')}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+  `
+}) %> 
